@@ -1,0 +1,73 @@
+<div class="row">
+    <div class="col-12">
+        <div class="card">
+            
+            
+            <div class="card-content collapse-show">
+                <div class="card-body">
+                    <div class="row">
+                        <form [formGroup]="form" (ngSubmit)="onSubmit()" >
+                            <div class="row">
+                                <div class="col-12 inputsForm">
+                                    <div class="row">
+                                        <div class="col-sm-12 col-md-3">
+                                            <fieldset>
+                                                <label for="gifName" class="form-label">Nombre del Gif</label><br>
+                                                <input type="text" id="gifName" formControlName="gifName" class="form-control input" required>
+                                            </fieldset>
+                                        </div>
+                                        <div class="col-sm-12 col-md-3">
+                                            <fieldset>
+                                                <label for="gifLimit" class="form-label">Gif Limit</label><br>
+                                                <input type="number" id="gifLimit" formControlName="gifLimit" class="form-control input" >
+                                            </fieldset>
+                                        </div>
+                                        <div class="col-sm-12 col-md-3">
+                                            <fieldset>
+                                                <label for="gifOffset" class="form-label">Gif offset</label><br>
+                                                <input type="number" id="gifLmit" formControlName="gifLimit" class="form-control input" >
+                                            </fieldset>
+                                        </div>
+                                       
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-12 text-right mt-2 buttonsForm">
+                                    
+                                    <button  type="submit" style="cursor: pointer;" type="submit" class="btn btn-primary pull-right font-custom mt-1" >                                        
+                                            <i class="fa fa-search font-custom"> <span style="font-family: sans-serif;"> Buscar gifs</span></i>                                        
+                                    </button>
+
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                    <br>
+                    <div *ngIf="empty; else elseBlock">
+                        <div class="row">
+                            <h4>Busca un gif por nombre !!:</h4>
+                        </div>
+                    </div>
+                    <ng-template #elseBlock>
+                        <div class="row">
+                            <h4>Gifs:</h4>
+                        </div>
+                        <hr>
+                        <div class="row">
+                            <div class="col-sm-12 col-md-3" *ngFor="let gif of apiData.data">
+                                <iframe [src]="sanitizeUrl(gif.embed_url)" frameborder="1" class="w-50"></iframe>
+                                <button  type="submit" style="cursor: pointer;" type="submit" class="btn btn-primary w-100"  (click)="saveFavorito(gif.embed_url)">                                        
+                                    <i class="fa fa-save font-custom"> <span style="font-family: sans-serif;"> Añadir gif a favoritos</span></i>                                        
+                                </button>
+                                
+                             </div>
+                        </div>
+                        
+                    </ng-template>
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

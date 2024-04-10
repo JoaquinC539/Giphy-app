@@ -1,0 +1,23 @@
+<main class="vertical-layout vertical-menu 2-columns governance">
+  <div class="app-content content">
+      <div class="content-wrapper">
+         
+          <br>
+          <div class="content-body">
+              <div class="col-12">
+                  <ul class="nav nav-tabs nav-linetriangle nav-justified tab-cards-dilm">
+                      <li class="nav-item">
+                          <a class="nav-link" [routerLink]="['/']"  [routerLinkActive]="['linkActive']">Fetch</a>
+                      </li>
+                      <li class="nav-item">
+                          <a class="nav-link" [routerLink]="['/favoritos']" [routerLinkActive]="['linkActive']">Favoritos</a>
+                      </li>
+                      
+                      
+                  </ul>
+              </div>
+          </div>     
+          <router-outlet></router-outlet>
+      </div>
+  </div>
+</main>
