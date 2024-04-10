@@ -17,6 +17,7 @@ Front:
 ## Uso:
 
 Back: 
+- En carpeta de back
 - no necesita configurar .env
 - No inlcuido tests
 - Correr con mvn o mvnw usando `mvn spring-boot:run` o construirse con `mvn clean install -DskipTests` y `mvn package -DskipTests` y ejecutar con `java -jar ./taget/demo-project.jar`
@@ -26,6 +27,8 @@ Back:
 - Endpoints: GET: */api/gifs?gifname=palceholder&giflimit=placeholder&gofoffset=placeholder* para buscar gifs y GET,POST,PUT: */api/favorites* para agregar, ver y quitar favoritos
 
 Front: 
+- En capreta de front/app
 - Ejecutar con `ng serve`para practicidad o `ng build`y correr con algun servidor
 - Usando bootstrap de css
 - Dos paginas una de fetch y otra de visualización y eliminación
+
