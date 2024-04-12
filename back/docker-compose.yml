@@ -5,7 +5,7 @@ services:
     image: java-app
     container_name: java-app
     ports:
-      - "4700:4700"
+      - "8080:8080"
     networks:
       - my-network
     
