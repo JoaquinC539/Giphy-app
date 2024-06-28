@@ -18,7 +18,7 @@ public class FetchController {
         String gifLimit=request.getParameter("gifLimit");
         String gifOffset=request.getParameter("gifOffset");
         // String url="https://reqres.in/api/users?page=2";
-        String url="https://api.giphy.com/v1/gifs/search?api_key=lI09ZjjSKSyLwg9Mn2tVtlB4K0dKHzyp"+
+        String url="https://api.giphy.com/v1/gifs/search?api_key=QpbSy4PS0KhmenqL8fzrxqc3mMFI32Tx"+
         "&q="+gifName+"&"+
         "limit="+(gifLimit==null?"25":gifLimit)+"&offset="+(gifOffset==null?"0":gifOffset)+
         "&rating=g&lang=en&bundle=messaging_non_clips";
