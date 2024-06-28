@@ -22,13 +22,17 @@ RUN apt-get install -y openjdk-17-jdk
 
 COPY . ./
 
+RUN chmod +x mvnw
+
 RUN ./mvnw install package
 
 FROM openjdk:17-alpine3.14
 
+WORKDIR /APP
+
 EXPOSE 8080
 
-COPY --from=build-app /APP/target/sekopjc-project.jar /var/www/project
+COPY --from=build-app /APP/target/sekopjc-project.jar .
 
-CMD [ "java", "-jar", "/var/www/project/sekopjc-project.jar" ]
+CMD [ "java", "-jar", "sekopjc-project.jar" ]
 
